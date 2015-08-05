@@ -4,7 +4,7 @@
 % This template has been downloaded from:
 % http://www.LaTeXTemplates.com
 %
-% This class file defines the structure and design of the template. 
+% This class file defines the structure and design of the template.
 %
 % Original header:
 % Copyright (C) 2010 by Trey Hunner
@@ -29,58 +29,16 @@
 \pagestyle{empty} % Suppress page numbers
 
 %----------------------------------------------------------------------------------------
-%	HEADINGS COMMANDS: Commands for printing name and address
+%	RESUME HEADER FORMATTING
 %----------------------------------------------------------------------------------------
 
-\def \name#1{\def\@name{#1}} % Defines the \name command to set name
-\def \@name {} % Sets \@name to empty by default
-
-\def \addressSep {$\diamond$} % Set default address separator to a diamond
-
-% One or two address lines can be specified 
-\let \@addressone \relax
-\let \@addresstwo \relax
-
-% \address command can be used to set the first and second address (optional)
-\def \address #1{
-  \@ifundefined{@addresstwo}{
-    \def \@addresstwo {#1}
-  }{
-    \def \@addressone {#1}
-  }
-}
-
-% \printaddress is used to style an address line (given as input)
-\def \printaddress #1{
-  \begingroup
-    \def \\ {\addressSep\ }
-    \centerline{#1}
-  \endgroup
-  \par
-  %\addressskip
-}
-
-% \printname is used to print the name as a page header
-\def \printname {
-  \begingroup
-    \hfil{\MakeUppercase{\namesize\bf \@name}}\hfil
-    %\nameskip
+\newcommand{\rName}[1]{
+    \hfil{\MakeUppercase{\namesize{\bf #1}}}\hfil
     \break
-  \endgroup
 }
 
-%----------------------------------------------------------------------------------------
-%	PRINT THE HEADING LINES
-%----------------------------------------------------------------------------------------
-
-\let\ori@document=\document
-\renewcommand{\document}{
-  \ori@document  % Begin document
-  \printname % Print the name specified with \name
-  \@ifundefined{@addressone}{}{ % Print the first address if specified
-    \printaddress{\@addressone}}
-  \@ifundefined{@addresstwo}{}{ % Print the second address if specified
-    \printaddress{\@addresstwo}}
+\newcommand{\rAddress}[1]{
+    \centerline{#1}
 }
 
 %----------------------------------------------------------------------------------------
@@ -109,7 +67,7 @@
  {\bf #1} \hfill {#2} % Bold company name and date on the right
  \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
   \\
-  {\em #3} \hfill {\em #4} % Italic job title and location
+  {#3} \hfill {#4}
   }\smallskip
   \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
    \itemsep -0.6em \vspace{-0.6em} % Compress items in list together for aesthetics
@@ -118,9 +76,27 @@
   \vspace{0.20em} % Some space after the list of bullet points
 }
 
+%----------------------------------------------------------------------------------------
+%	SMALL SECTION FORMATTING
+%----------------------------------------------------------------------------------------
+
+\newcommand{\rSmallsectionnl}[4]{ % 4 input arguments - organization, year(s) employed, job title and location
+    {\bf #1} -- {#2} -- {#3} -- {#4}}
+
+% This environment has a list inside, the other doesn't.
+\newenvironment{rSmallsection}[4]{% 4 input arguments - organization, year(s) employed, job title and location
+    \rSmallsectionnl{#1}{#2}{#3}{#4}
+    \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
+        \itemsep -0.6em \vspace{-0.6em} % Compress items in list together for aesthetics
+    }{
+    \end{list}
+    \vspace{0.20em} % Some space after the list of bullet points
+}
+
+
 % The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
 \def\namesize{\large} % Size of the name at the top of the document (ORIGINAL \huge)
 %\def\addressskip{\smallskip} % The space between the two address (or phone/email) lines
-\def\sectionlineskip{\smallskip} % The space above the horizontal line for each section 
+\def\sectionlineskip{\smallskip} % The space above the horizontal line for each section
 %\def\nameskip{\smallskip} % The space after your name at the top
 %\def\sectionskip{\smallskip} % The space after the heading section

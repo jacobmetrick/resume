@@ -21,46 +21,19 @@
 
 \documentclass{resume} % Use the custom resume.cls style
 
-\usepackage[left=0.75in,top=0.5in,right=0.75in,bottom=0.5in]{geometry} % Document margins
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
 % Original: 0.6 bottom and top margins
-
-\name{Jacob Metrick} % Your name
-\address{301 Minor Ave N \\ Apt 427 \\ Seattle, WA 98109} % Your address
-\address{847--924--4799 \\ jacob.metrick@gmail.com} % Your phone number and email
 
 \begin{document}
 
 %----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
+%	RESUME BASIC INFO
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Education}
-
-{\bf Yale University} -- {\em New Haven, CT} -- B.S. in Computer Science\slash Economics
--- GPA  3.63 \\
-{\em Graduated 2013}
-
-{\bf Glenbrook South High School} -- {\em Glenview, IL} -- Academy of Intl. Studies --
-GPA 4.97 -- ACT 34
-{\em Graduated 2009}
-
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	TECHNICAL SKILLS
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Technical Skills}
-
-\begin{tabular}{ @{} >{\bfseries}l @{\hspace{3ex}} >{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{15cm} }
-APIs & Android, Spring MVC, Build Systems (Amazon) \\
-Languages & Java, HTML + CSS + JS, C, Bash, Python, Functional Programming\\
-CS Classes & Data Structures, Systems Programming,  Databases,
-Algorithms, Sound Synthesis, Artificial Intelligence, Decentralized
-Systems, \mbox{Mobile Computing}
-\end{tabular}
-
-\end{rSection}
+\rName{Jacob Metrick} % Your name
+\rAddress{301 Minor Ave N $\diamond$ Apt 427 $\diamond$ Seattle, WA 98109} % Your address
+\rAddress{847--924--4799 $\diamond$ jacob.metrick@gmail.com} % Your phone number and email
+\rAddress{https://www.linkedin.com/pub/jacob-metrick/7b/80b/144} %LinkedIn
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
@@ -68,13 +41,16 @@ Systems, \mbox{Mobile Computing}
 
 \begin{rSection}{Experience}
 
-\begin{rSubsection}{Amazon.com}{August 2013 - Now}{SDE1: Fire Phone Home (2013 - 2014), undisclosed website (2015)}{Seattle, WA}
+\begin{rSubsection}{Amazon.com}{August 2013 - Present}{SDE1: Fire Phone Home (2013 - 2014), undisclosed website (2015)}{Seattle, WA}
 \item Designed and built app grid drag and drop system for the Fire Phone
-\item Responsible for stability of the Home app on Fire Phone, which had a 0.01\% crash rate
+\item Fixed bugs and refactored code to increase stability of the Home app on Fire Phone, which had a 0.01\% crash rate per application launch
+\item Migrated existing home code base to new build system, allowing for builds on remote servers and reducing build time by a third
 \item Created Spring MVC application for unreleased video-based website
 \item Completed threat model and architecture security review for website
 \item Reported on and implemented performance and error metrics on both projects
 \end{rSubsection}
+
+%------------------------------------------------
 
 \begin{rSubsection}{Five Rings Capital}{Summer 2012}{Programming Intern}{New York, NY}
 \item Built mock trading game from the ground up for internal training and recruitment purposes
@@ -84,7 +60,7 @@ Systems, \mbox{Mobile Computing}
 %------------------------------------------------
 
 \begin{rSubsection}{Sallerson Troob}{Summer 2011}{Trading Intern}{Chicago, IL}
-\item Worked as clerk on Chicago Mercantile Exchange floor
+\item Clerked on Chicago Mercantile Exchange floor
 \item Shadowed volatility traders on the commodities markets
 \end{rSubsection}
 
@@ -97,6 +73,32 @@ Systems, \mbox{Mobile Computing}
 
 \end{rSection}
 
+%----------------------------------------------------------------------------------------
+%	TECHNICAL SKILLS
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Technical Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{3ex}} >{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{15cm} }
+APIs \& Systems & Android, Spring MVC, Build Systems (Amazon), Linux, Github \\
+Languages & Java, HTML + CSS + JS, C, Bash, Python, Functional Programming\\
+CS Classes & Data Structures, Systems Programming,  Databases,
+Algorithms, Sound Synthesis, Artificial Intelligence, Decentralized
+Systems, \mbox{Mobile Computing}
+\end{tabular}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+\rSmallsectionnl{Yale University}{Graduated 2013}{B.S. in Computer Science\slash Economics -- GPA  3.63}{New Haven, CT}
+
+\end{rSection}
+
 
 %----------------------------------------------------------------------------------------
 %	LEADERSHIP SECTION
@@ -104,16 +106,14 @@ Systems, \mbox{Mobile Computing}
 
 \begin{rSection}{Leadership Experience}
 
-\begin{rSubsection}{Yale Glee Club}{2009 - 2013}{Manager (2012 - 2013)}{New Haven, CT}
-\item Managed member affairs and attendance of 80 person choir
-\end{rSubsection}
+\begin{rSmallsection}{Yale Glee Club}{2012 - 2013}{Manager}{New Haven, CT}
+\item Oversaw the affairs of an 80 person choir
+\end{rSmallsection}
 
 %------------------------------------------------
 
 \begin{rSubsection}{Magevet A Cappella Singing Group}{2009 - 2013}{Business Manager and Webmaster (2011), Two-time Tour Manager (2012, 2013)}{New Haven, CT}
-\item Booked concerts, handled logistics, managed group finances and public relations
-\item Responsible for all aspects of recording and producing a CD
-\item Planned two seperate trips for group across Israel and the U.S. Midwest
+\item Booked concerts, managed group finances, and handled logistics including recording a CD and organizing tours across Israel and the U.S. Midwest
 \end{rSubsection}
 
 \end{rSection}
